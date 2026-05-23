@@ -674,12 +674,20 @@ Acomodações climatizadas com todo conforto para sua família
 </p>
 </div>
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-<img src="images/quarto-casal.jpg" alt="Quarto casal" style="border-radius: 12px; box-shadow: var(--shadow-md); width: 100%; height: 280px; object-fit: cover;">
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
 <img src="images/cama-casal.jpg" alt="Cama casal" style="border-radius: 12px; box-shadow: var(--shadow-md); width: 100%; height: 280px; object-fit: cover;">
 <img src="images/quarto-triplo.jpg" alt="Quarto triplo" style="border-radius: 12px; box-shadow: var(--shadow-md); width: 100%; height: 280px; object-fit: cover;">
 <img src="images/quarto-camas.jpg" alt="Quarto múltiplas camas" style="border-radius: 12px; box-shadow: var(--shadow-md); width: 100%; height: 280px; object-fit: cover;">
+<img src="images/quarto-casal.jpg" alt="Quarto casal" style="border-radius: 12px; box-shadow: var(--shadow-md); width: 100%; height: 280px; object-fit: cover;">
 </div>
+
+<style>
+@media (max-width: 768px) {
+#quartos .container > div:last-child {
+grid-template-columns: 1fr !important;
+}
+}
+</style>
 </div>
 </section>
 
