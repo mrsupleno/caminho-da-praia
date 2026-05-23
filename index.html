@@ -197,7 +197,7 @@
  #hero {
  min-height: 100vh;
  background:
- linear-gradient(to bottom, rgba(2, 39, 66, 0.5) 0%, rgba(2, 39, 66, 0.35) 50%, rgba(2, 39, 66, 0.6) 100%),
+ linear-gradient(to bottom, rgba(2, 39, 66, 0.7) 0%, rgba(2, 39, 66, 0.5) 50%, rgba(2, 39, 66, 0.75) 100%),
  url('images/hero-itaoca-aerea.png') center/cover no-repeat;
  display: flex; align-items: center; justify-content: center;
  text-align: center; padding: calc(72px + var(--unit-xxl)) var(--gutter) var(--unit-xxl);
@@ -470,7 +470,12 @@
  <!-- HERO -->
  <section id="hero">
  <div class="hero-content">
- <div class="hero-badge">🌊 Praia de Itaóca · Itapemirim-ES</div>
+ <div class="hero-badge">
+ <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+ <path d="M2.5 11.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+ </svg>
+ Praia de Itaóca · Itapemirim-ES
+ </div>
  <h1>Aconchego e Beleza À Beira-Mar na Praia de Itaóca</h1>
  <p>Sua melhor escolha para relaxar em família e aproveitar o litoral sul do Espírito Santo com o melhor custo-benefício.</p>
  <a class="hero-cta" href="#excursoes">
@@ -494,17 +499,32 @@
  </div>
  <div class="pousada-cards">
  <div class="pousada-card">
- <div class="pousada-card-icon">🛏️</div>
+ <div class="pousada-card-icon">
+ <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+ <path d="M3 5a2 2 0 0 0-2 2v2h2V7a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v2h2V7a2 2 0 0 0-2-2H3z"/>
+ <path d="M1 11a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H1zm0 1h14v2H1v-2z"/>
+ </svg>
+ </div>
  <h4>Suítes Climatizadas</h4>
  <p>Ar-condicionado, Wi-Fi de alta velocidade, frigobar individual, TV e banheiro privativo em todas as suítes para máximo conforto.</p>
  </div>
  <div class="pousada-card">
- <div class="pousada-card-icon">☕</div>
+ <div class="pousada-card-icon">
+ <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+ <path d="M0 2a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V2zm1 0v12h11V2H1z"/>
+ <path d="M4.5 1a.5.5 0 0 0-.5.5V2h9v-.5a.5.5 0 0 0-.5-.5h-8zM3 3v1h10V3H3z"/>
+ </svg>
+ </div>
  <h4>Diferencial Gastronômico</h4>
  <p>Café da manhã artesanal de fabricação própria com pães frescos e bolos caseiros. Serviço de jantar completo incluso nos pacotes especiais.</p>
  </div>
  <div class="pousada-card">
- <div class="pousada-card-icon">🐟</div>
+ <div class="pousada-card-icon">
+ <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+ <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+ <path d="M8.5 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8.5 8.683V3.5z"/>
+ </svg>
+ </div>
  <h4>Cultura & Natureza Local</h4>
  <p>Mergulhe na rica tradição pesqueira da região, explore a orla, trilhas e saboreie frutos do mar frescos na mesa da pousada.</p>
  </div>
@@ -528,8 +548,11 @@
  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; margin-bottom: 48px;">
  <!-- Card Pousada -->
  <div style="background: linear-gradient(135deg, rgba(2, 39, 66, 0.03) 0%, rgba(2, 39, 66, 0.06) 100%); border-radius: 12px; padding: 48px 32px; text-align: center; border: 2px solid var(--outline-variant); transition: all 0.3s;">
- <div style="width: 80px; height: 80px; margin: 0 auto 24px; background: linear-gradient(135deg, var(--primary), var(--primary-container)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; box-shadow: 0 4px 16px rgba(2, 39, 66, 0.2);">
- 🏨
+ <div style="width: 80px; height: 80px; margin: 0 auto 24px; background: linear-gradient(135deg, var(--primary), var(--primary-container)); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(2, 39, 66, 0.2);">
+ <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" viewBox="0 0 16 16">
+ <path d="M3 13.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm1.5-10a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5v-8z"/>
+ <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5v-9zM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"/>
+ </svg>
  </div>
  <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); margin-bottom: 16px;">
  Pousada Caminho da Praia
@@ -555,8 +578,11 @@
 
  <!-- Card Excursões -->
  <div style="background: linear-gradient(135deg, rgba(197, 155, 39, 0.05) 0%, rgba(254, 206, 87, 0.08) 100%); border-radius: 12px; padding: 48px 32px; text-align: center; border: 2px solid var(--gold); transition: all 0.3s;">
- <div style="width: 80px; height: 80px; margin: 0 auto 24px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; box-shadow: 0 4px 16px rgba(197, 155, 39, 0.3);">
- 🚌
+ <div style="width: 80px; height: 80px; margin: 0 auto 24px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(197, 155, 39, 0.3);">
+ <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" viewBox="0 0 16 16">
+ <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm10.5 2A1.5 1.5 0 0 1 14 5.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 11.5v-6A1.5 1.5 0 0 1 3.5 4h9z"/>
+ <path d="M4 11.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm11 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+ </svg>
  </div>
  <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--secondary); margin-bottom: 16px;">
  Excursões de Minas Gerais
@@ -615,7 +641,7 @@
  <!-- Praia -->
  <div style="margin-bottom: 80px;">
  <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.75rem; font-weight: 700; color: var(--primary); margin-bottom: 32px; display: flex; align-items: center; gap: 12px;">
- 🌊 Praia & Mar
+ Praia & Mar
  </h3>
  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
  <img src="images/vista-mar-por-sol.jpg" alt="Vista do mar ao pôr do sol" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(30, 61, 89, 0.08); width: 100%; height: 280px; object-fit: cover;">
@@ -632,7 +658,7 @@
  <!-- Quartos -->
  <div style="margin-bottom: 80px;">
  <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.75rem; font-weight: 700; color: var(--primary); margin-bottom: 32px; display: flex; align-items: center; gap: 12px;">
- 🛏️ Quartos & Suítes
+ Quartos & Suítes
  </h3>
  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
  <img src="images/quarto-casal.jpg" alt="Quarto casal" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(30, 61, 89, 0.08); width: 100%; height: 280px; object-fit: cover;">
@@ -648,7 +674,7 @@
  <!-- Café da Manhã -->
  <div style="margin-bottom: 80px;">
  <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.75rem; font-weight: 700; color: var(--primary); margin-bottom: 32px; display: flex; align-items: center; gap: 12px;">
- ☕ Café da Manhã
+ Café da Manhã
  </h3>
  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
  <img src="images/cafe-manha-mesa-1.jpg" alt="Café da manhã - mesa 1" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(30, 61, 89, 0.08); width: 100%; height: 280px; object-fit: cover;">
@@ -665,7 +691,7 @@
  <!-- Pousada -->
  <div>
  <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.75rem; font-weight: 700; color: var(--primary); margin-bottom: 32px; display: flex; align-items: center; gap: 12px;">
- 🏨 Pousada & Localização
+ Pousada & Localização
  </h3>
  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
  <img src="images/pousada-fachada.jpg" alt="Fachada da pousada" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(30, 61, 89, 0.08); width: 100%; height: 280px; object-fit: cover;">
@@ -736,9 +762,9 @@
  </div>
  <div class="exc-card-body">
  <div class="badges">
- <span class="badge badge-navy">🚌 Transporte</span>
- <span class="badge badge-navy">🏨 Hospedagem</span>
- <span class="badge badge-gold">☕ Café</span>
+ <span class="badge badge-navy">Transporte</span>
+ <span class="badge badge-navy">Hospedagem</span>
+ <span class="badge badge-gold">Café</span>
  </div>
  <p>O pacote perfeito para uma fuga de fim de semana. Aproveite a praia, o descanso e o café artesanal da pousada sem preocupações.</p>
  <a class="btn-consultar"
@@ -758,9 +784,9 @@
  </div>
  <div class="exc-card-body">
  <div class="badges">
- <span class="badge badge-navy">🚌 Transporte</span>
- <span class="badge badge-navy">🏨 Hospedagem</span>
- <span class="badge badge-gold">☕ Café</span>
+ <span class="badge badge-navy">Transporte</span>
+ <span class="badge badge-navy">Hospedagem</span>
+ <span class="badge badge-gold">Café</span>
  <span class="badge badge-gold">🍽️ Jantar</span>
  </div>
  <p>Aproveite o clima ameno do meio do ano para relaxar na costa capixaba com condições especiais. O pacote mais completo da pousada.</p>
@@ -781,8 +807,8 @@
  </div>
  <div class="exc-card-body">
  <div class="badges">
- <span class="badge badge-navy">🏨 Suíte Especial</span>
- <span class="badge badge-gold">☕ Café na Varanda</span>
+ <span class="badge badge-navy">Suíte Especial</span>
+ <span class="badge badge-gold">Café na Varanda</span>
  <span class="badge badge-gold">🌅 Vista Mar</span>
  </div>
  <p>Experiência romântica à beira-mar com quarto especial, café da manhã exclusivo na varanda e toda a tranquilidade que o casal merece.</p>
