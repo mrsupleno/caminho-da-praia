@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Pousada Caminho da Praia – Itaóca, Itapemirim-ES</title>
+ <meta name="description" content="Pousada Caminho da Praia em Itaóca, Itapemirim-ES. Aconchego, natureza e o melhor custo-benefício do litoral sul do Espírito Santo." />
+ <link rel="preconnect" href="https://fonts.googleapis.com" />
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+ <style>
+ /* ─── Reset & Base ─────────────────────────────────────────── */
+ *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ :root {
+ --navy: #1E3D59;
+ --gold: #C59B27;
+ --wgreen: #17B978;
+ --bg: #F8F9FA;
+ --white: #FFFFFF;
+ --text: #2B2B2B;
+ --navy-light: #26507a;
+ }
+ html { scroll-behavior: smooth; }
+ body {
+ font-family: 'Inter', Helvetica, sans-serif;
+ color: var(--text);
+ background: var(--white);
+ line-height: 1.6;
+ }
+ h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+ img { max-width: 100%; display: block; }
+ a { text-decoration: none; color: inherit; }
+
+ /* ─── Navbar ───────────────────────────────────────────────── */
+ #navbar {
+ position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+ background: var(--navy);
+ display: flex; align-items: center; justify-content: space-between;
+ padding: 0 2rem; height: 68px;
+ box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+ }
+ .nav-logo {
+ display: flex; align-items: center; gap: 0.75rem;
+ }
+ .nav-logo-circle {
+ width: 44px; height: 44px; border-radius: 50%;
+ background: linear-gradient(135deg, var(--gold), #e8b830);
+ display: flex; align-items: center; justify-content: center;
+ font-family: 'Montserrat', sans-serif;
+ font-weight: 800; color: var(--navy); font-size: 1.1rem;
+ flex-shrink: 0;
+ }
+ .nav-logo-text {
+ font-family: 'Montserrat', sans-serif;
+ font-weight: 700; font-size: 0.95rem;
+ color: var(--white); line-height: 1.2;
+ }
+ .nav-logo-text span { color: var(--gold); }
+ .nav-links {
+ display: flex; align-items: center; gap: 2rem; list-style: none;
+ }
+ .nav-links a {
+ color: rgba(255,255,255,0.85);
+ font-size: 0.875rem; font-weight: 500;
+ transition: color 0.2s;
+ }
+ .nav-links a:hover { color: var(--gold); }
+ .btn-reservar {
+ background: var(--gold);
+ color: var(--navy) !important;
+ font-weight: 700 !important;
+ padding: 0.5rem 1.25rem;
+ border-radius: 6px;
+ transition: background 0.2s, transform 0.1s !important;
+ }
+ .btn-reservar:hover { background: #d4a82a !important; transform: translateY(-1px); }
+ .nav-hamburger {
+ display: none; flex-direction: column; gap: 5px; cursor: pointer;
+ background: none; border: none; padding: 4px;
+ }
+ .nav-hamburger span {
+ display: block; width: 24px; height: 2px;
+ background: var(--white); border-radius: 2px; transition: all 0.3s;
+ }
+
+ /* ─── Hero ─────────────────────────────────────────────────── */
+ #hero {
+ min-height: 100vh;
+ background:
+ linear-gradient(to bottom, rgba(30,61,89,0.72) 0%, rgba(30,61,89,0.55) 60%, rgba(30,61,89,0.85) 100%),
+ url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80') center/cover no-repeat;
+ display: flex; align-items: center; justify-content: center;
+ text-align: center; padding: 120px 1.5rem 4rem;
+ }
+ .hero-content { max-width: 780px; }
+ .hero-badge {
+ display: inline-block;
+ background: rgba(197,155,39,0.2);
+ border: 1px solid var(--gold);
+ color: var(--gold);
+ font-size: 0.8rem; font-weight: 600;
+ letter-spacing: 0.1em; text-transform: uppercase;
+ padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 1.5rem;
+ }
+ .hero-content h1 {
+ font-size: clamp(2rem, 5vw, 3.2rem);
+ font-weight: 800; color: var(--white);
+ line-height: 1.2; margin-bottom: 1.25rem;
+ text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+ }
+ .hero-content p {
+ font-size: clamp(1rem, 2vw, 1.2rem);
+ color: rgba(255,255,255,0.88);
+ margin-bottom: 2.5rem; max-width: 580px; margin-left: auto; margin-right: auto;
+ }
+ .hero-cta {
+ display: inline-flex; align-items: center; gap: 0.6rem;
+ background: var(--gold); color: var(--navy);
+ font-family: 'Montserrat', sans-serif;
+ font-weight: 700; font-size: 1rem;
+ padding: 0.9rem 2.2rem; border-radius: 8px;
+ transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+ box-shadow: 0 4px 20px rgba(197,155,39,0.45);
+ }
+ .hero-cta:hover {
+ background: #d4a82a; transform: translateY(-2px);
+ box-shadow: 0 6px 24px rgba(197,155,39,0.55);
+ }
+
+ /* ─── Section base ─────────────────────────────────────────── */
+ section { padding: 5rem 1.5rem; }
+ .container { max-width: 1100px; margin: 0 auto; }
+ .section-tag {
+ display: inline-block;
+ color: var(--gold); font-size: 0.78rem;
+ font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+ margin-bottom: 0.5rem;
+ }
+ .section-title {
+ font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+ font-weight: 800; color: var(--navy);
+ line-height: 1.25; margin-bottom: 1.25rem;
+ }
+ .section-divider {
+ width: 52px; height: 4px; border-radius: 2px;
+ background: var(--gold); margin-bottom: 2rem;
+ }
+
+ /* ─── A Pousada ────────────────────────────────────────────── */
+ #pousada { background: var(--bg); }
+ .pousada-grid {
+ display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+ }
+ .pousada-text p {
+ color: #444; font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem;
+ }
+ .pousada-cards { display: flex; flex-direction: column; gap: 1.25rem; }
+ .pousada-card {
+ background: var(--white);
+ border-left: 4px solid var(--gold);
+ border-radius: 0 10px 10px 0;
+ padding: 1.5rem 1.5rem;
+ box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+ }
+ .pousada-card-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+ .pousada-card h4 {
+ font-size: 1rem; font-weight: 700;
+ color: var(--navy); margin-bottom: 0.4rem;
+ }
+ .pousada-card p { font-size: 0.925rem; color: #555; line-height: 1.6; }
+
+ /* ─── Excursões ────────────────────────────────────────────── */
+ #excursoes { background: var(--white); }
+ .excursoes-header { text-align: center; margin-bottom: 3rem; }
+ .excursoes-header .section-divider { margin-left: auto; margin-right: auto; }
+ .excursoes-grid {
+ display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem;
+ }
+ .exc-card {
+ border: 1px solid #e4e8ee;
+ border-radius: 14px; overflow: hidden;
+ box-shadow: 0 3px 18px rgba(0,0,0,0.07);
+ transition: transform 0.2s, box-shadow 0.2s;
+ }
+ .exc-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+ .exc-card-header {
+ background: var(--navy); padding: 1.5rem 1.75rem;
+ }
+ .exc-card-header h3 {
+ color: var(--white); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.35rem;
+ }
+ .exc-card-header p { color: rgba(255,255,255,0.72); font-size: 0.875rem; }
+ .exc-card-body { padding: 1.5rem 1.75rem; }
+ .badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+ .badge {
+ font-size: 0.75rem; font-weight: 600;
+ padding: 0.28rem 0.75rem; border-radius: 50px;
+ display: flex; align-items: center; gap: 0.3rem;
+ }
+ .badge-navy { background: rgba(30,61,89,0.1); color: var(--navy); }
+ .badge-gold { background: rgba(197,155,39,0.15); color: #8a6c18; }
+ .exc-card-body p { font-size: 0.9rem; color: #555; margin-bottom: 1.5rem; line-height: 1.65; }
+ .btn-consultar {
+ display: inline-flex; align-items: center; gap: 0.5rem;
+ background: var(--wgreen); color: var(--white);
+ font-family: 'Montserrat', sans-serif;
+ font-weight: 700; font-size: 0.9rem;
+ padding: 0.7rem 1.5rem; border-radius: 7px;
+ transition: background 0.2s, transform 0.15s;
+ width: 100%; justify-content: center;
+ }
+ .btn-consultar:hover { background: #13a368; transform: translateY(-1px); }
+ .btn-consultar svg { width: 18px; height: 18px; fill: var(--white); flex-shrink: 0; }
+
+ /* ─── Localização & Contato ────────────────────────────────── */
+ #contato { background: var(--bg); }
+ .contato-grid {
+ display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start;
+ }
+ .mapa-placeholder {
+ background: linear-gradient(135deg, #d0dce8, #b8ccd8);
+ border-radius: 14px; overflow: hidden;
+ aspect-ratio: 16/10; position: relative;
+ box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+ }
+ .mapa-placeholder iframe {
+ width: 100%; height: 100%; border: none;
+ }
+ .mapa-fallback {
+ position: absolute; inset: 0;
+ display: flex; flex-direction: column;
+ align-items: center; justify-content: center;
+ gap: 0.5rem; color: var(--navy);
+ }
+ .mapa-fallback svg { width: 48px; height: 48px; opacity: 0.5; }
+ .mapa-fallback p { font-size: 0.875rem; opacity: 0.6; }
+ .contato-info { display: flex; flex-direction: column; gap: 1.5rem; }
+ .contato-item { display: flex; gap: 1rem; align-items: flex-start; }
+ .contato-icon {
+ width: 44px; height: 44px; border-radius: 10px;
+ background: var(--navy); color: var(--white);
+ display: flex; align-items: center; justify-content: center;
+ font-size: 1.2rem; flex-shrink: 0;
+ }
+ .contato-item h4 {
+ font-size: 0.85rem; font-weight: 700;
+ color: var(--gold); text-transform: uppercase;
+ letter-spacing: 0.06em; margin-bottom: 0.2rem;
+ }
+ .contato-item p { font-size: 0.95rem; color: #444; line-height: 1.5; }
+ .btn-wpp-main {
+ display: inline-flex; align-items: center; gap: 0.65rem;
+ background: var(--wgreen); color: var(--white);
+ font-family: 'Montserrat', sans-serif;
+ font-weight: 700; font-size: 1rem;
+ padding: 0.9rem 2rem; border-radius: 8px; margin-top: 1rem;
+ transition: background 0.2s, transform 0.15s;
+ box-shadow: 0 4px 18px rgba(23,185,120,0.35);
+ }
+ .btn-wpp-main:hover { background: #13a368; transform: translateY(-2px); }
+ .btn-wpp-main svg { width: 22px; height: 22px; fill: var(--white); }
+
+ /* ─── Footer ───────────────────────────────────────────────── */
+ footer {
+ background: var(--navy); color: rgba(255,255,255,0.7);
+ text-align: center; padding: 1.75rem 1.5rem;
+ font-size: 0.875rem;
+ }
+ footer span { color: var(--gold); }
+
+ /* ─── Floating WhatsApp ────────────────────────────────────── */
+ .wpp-float {
+ position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 998;
+ background: var(--wgreen);
+ width: 58px; height: 58px; border-radius: 50%;
+ display: flex; align-items: center; justify-content: center;
+ box-shadow: 0 4px 20px rgba(23,185,120,0.5);
+ transition: transform 0.2s, box-shadow 0.2s;
+ }
+ .wpp-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(23,185,120,0.65); }
+ .wpp-float svg { width: 30px; height: 30px; fill: var(--white); }
+
+ /* ─── Responsive ───────────────────────────────────────────── */
+ @media (max-width: 900px) {
+ .pousada-grid, .contato-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+ }
+ @media (max-width: 768px) {
+ .nav-links { display: none; flex-direction: column; gap: 0; }
+ .nav-links.open {
+ display: flex; position: absolute;
+ top: 68px; left: 0; right: 0;
+ background: var(--navy);
+ padding: 1rem 2rem 1.5rem;
+ box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+ }
+ .nav-links li { width: 100%; }
+ .nav-links a {
+ display: block; padding: 0.75rem 0;
+ border-bottom: 1px solid rgba(255,255,255,0.08);
+ }
+ .nav-links .btn-reservar {
+ margin-top: 0.75rem; text-align: center;
+ border-radius: 6px; border-bottom: none !important;
+ }
+ .nav-hamburger { display: flex; }
+ section { padding: 3.5rem 1.25rem; }
+ .excursoes-grid { grid-template-columns: 1fr; }
+ }
+ @media (max-width: 480px) {
+ .hero-content h1 { font-size: 1.75rem; }
+ }
+ </style>
+</head>
+<body>
+
+ <!-- NAVBAR -->
+ <nav id="navbar">
+ <div class="nav-logo">
+ <div class="nav-logo-circle">CP</div>
+ <div class="nav-logo-text">Pousada Caminho<br><span>da Praia</span></div>
+ </div>
+ <ul class="nav-links" id="navLinks">
+ <li><a href="#pousada">A Pousada</a></li>
+ <li><a href="#excursoes">Excursões</a></li>
+ <li><a href="#contato">Localização</a></li>
+ <li><a href="#contato">Contato</a></li>
+ <li>
+ <a class="btn-reservar"
+ href="https://wa.me/5528999999999?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Pousada%20Caminho%20da%20Praia%20e%20gostaria%20de%20reservar%20uma%20vaga."
+ target="_blank" rel="noopener">
+ Reservar Vaga
+ </a>
+ </li>
+ </ul>
+ <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+ <span></span><span></span><span></span>
+ </button>
+ </nav>
+
+ <!-- HERO -->
+ <section id="hero">
+ <div class="hero-content">
+ <div class="hero-badge">🌊 Praia de Itaóca · Itapemirim-ES</div>
+ <h1>Aconchego e Beleza À Beira-Mar na Praia de Itaóca</h1>
+ <p>Sua melhor escolha para relaxar em família e aproveitar o litoral sul do Espírito Santo com o melhor custo-benefício.</p>
+ <a class="hero-cta" href="#excursoes">
+ Ver Próximas Excursões
+ <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+ </a>
+ </div>
+ </section>
+
+ <!-- A POUSADA -->
+ <section id="pousada">
+ <div class="container">
+ <div class="pousada-grid">
+ <div class="pousada-text">
+ <span class="section-tag">Conheça</span>
+ <h2 class="section-title">A Pousada Caminho da Praia</h2>
+ <div class="section-divider"></div>
+ <p>Localizada na região sul do Espírito Santo, na Praia de Itaóca, Itapemirim, a Pousada Caminho da Praia oferece uma experiência única em meio à natureza exuberante e ao mar tranquilo da costa capixaba.</p>
+ <p>Com um ambiente acolhedor e familiar, a pousada é ideal para famílias e casais que buscam relaxamento e contato com a cultura local, rica em tradições pesqueiras e gastronomia típica.</p>
+ <p>A proximidade com a praia e as belezas naturais da região proporcionam atividades inesquecíveis como caminhadas na orla, banhos de mar revigorantes e a degustação de pratos tradicionais à base de frutos do mar.</p>
+ </div>
+ <div class="pousada-cards">
+ <div class="pousada-card">
+ <div class="pousada-card-icon">🛏️</div>
+ <h4>Suítes Climatizadas</h4>
+ <p>Ar-condicionado, Wi-Fi de alta velocidade, frigobar individual, TV e banheiro privativo em todas as suítes para máximo conforto.</p>
+ </div>
+ <div class="pousada-card">
+ <div class="pousada-card-icon">☕</div>
+ <h4>Diferencial Gastronômico</h4>
+ <p>Café da manhã artesanal de fabricação própria com pães frescos e bolos caseiros. Serviço de jantar completo incluso nos pacotes especiais.</p>
+ </div>
+ <div class="pousada-card">
+ <div class="pousada-card-icon">🐟</div>
+ <h4>Cultura & Natureza Local</h4>
+ <p>Mergulhe na rica tradição pesqueira da região, explore a orla, trilhas e saboreie frutos do mar frescos na mesa da pousada.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- EXCURSÕES E PACOTES -->
+ <section id="excursoes">
+ <div class="container">
+ <div class="excursoes-header">
+ <span class="section-tag">Calendário</span>
+ <h2 class="section-title">Excursões & Pacotes</h2>
+ <div class="section-divider"></div>
+ <p style="max-width:540px;margin:0 auto;color:#555;">Escolha o pacote ideal para você e sua família. Consulte as vagas disponíveis diretamente pelo WhatsApp.</p>
+ </div>
+ <div class="excursoes-grid">
+
+ <!-- Card 1 -->
+ <div class="exc-card">
+ <div class="exc-card-header">
+ <h3>Finais de Semana</h3>
+ <p>Saídas regulares · Sexta a Domingo</p>
+ </div>
+ <div class="exc-card-body">
+ <div class="badges">
+ <span class="badge badge-navy">🚌 Transporte Incluso</span>
+ <span class="badge badge-navy">🏨 Hospedagem</span>
+ <span class="badge badge-gold">☕ Café da Manhã</span>
+ </div>
+ <p>O pacote perfeito para uma fuga de fim de semana. Aproveite a praia, o descanso e o café artesanal da pousada sem preocupações.</p>
+ <a class="btn-consultar"
+ href="https://wa.me/5528999999999?text=Ol%C3%A1!%20Vi%20o%20site%20e%20gostaria%20de%20consultar%20vagas%20para%20o%20pacote%20de%20Final%20de%20Semana."
+ target="_blank" rel="noopener">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.556 4.122 1.527 5.855L0 24l6.335-1.502A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.498-5.197-1.371l-.373-.219-3.861.915.977-3.756-.243-.389A9.942 9.942 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+ Consultar Vagas
+ </a>
+ </div>
+ </div>
+
+ <!-- Card 2 -->
+ <div class="exc-card">
+ <div class="exc-card-header">
+ <h3>Férias de Julho</h3>
+ <p>Temporada de Inverno · Pacote Completo</p>
+ </div>
+ <div class="exc-card-body">
+ <div class="badges">
+ <span class="badge badge-navy">🚌 Transporte de Turismo</span>
+ <span class="badge badge-navy">🏨 Hospedagem Completa</span>
+ <span class="badge badge-gold">☕ Café da Manhã</span>
+ <span class="badge badge-gold">🍽️ Jantar Incluso</span>
+ </div>
+ <p>Aproveite o clima ameno do meio do ano para relaxar na costa capixaba com condições especiais. O pacote mais completo da pousada.</p>
+ <a class="btn-consultar"
+ href="https://wa.me/5528999999999?text=Ol%C3%A1!%20Vi%20o%20site%20e%20tenho%20interesse%20no%20Pacote%20F%C3%A9rias%20de%20Julho.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+ target="_blank" rel="noopener">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.556 4.122 1.527 5.855L0 24l6.335-1.502A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.498-5.197-1.371l-.373-.219-3.861.915.977-3.756-.243-.389A9.942 9.942 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+ Consultar Vagas
+ </a>
+ </div>
+ </div>
+
+ <!-- Card 3 -->
+ <div class="exc-card">
+ <div class="exc-card-header">
+ <h3>Pacote Casal Especial</h3>
+ <p>Disponível o ano todo · Sob consulta</p>
+ </div>
+ <div class="exc-card-body">
+ <div class="badges">
+ <span class="badge badge-navy">🏨 Suíte Especial</span>
+ <span class="badge badge-gold">☕ Café da Manhã na Varanda</span>
+ <span class="badge badge-gold">🌅 Vista para o Mar</span>
+ </div>
+ <p>Experiência romântica à beira-mar com quarto especial, café da manhã exclusivo na varanda e toda a tranquilidade que o casal merece.</p>
+ <a class="btn-consultar"
+ href="https://wa.me/5528999999999?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20Pacote%20Casal%20Especial%20da%20Pousada%20Caminho%20da%20Praia."
+ target="_blank" rel="noopener">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.556 4.122 1.527 5.855L0 24l6.335-1.502A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.498-5.197-1.371l-.373-.219-3.861.915.977-3.756-.243-.389A9.942 9.942 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+ Consultar Vagas
+ </a>
+ </div>
+ </div>
+
+ </div>
+ </div>
+ </section>
+
+ <!-- LOCALIZAÇÃO & CONTATO -->
+ <section id="contato">
+ <div class="container">
+ <div style="margin-bottom:3rem;">
+ <span class="section-tag">Onde Estamos</span>
+ <h2 class="section-title">Localização & Contato</h2>
+ <div class="section-divider"></div>
+ </div>
+ <div class="contato-grid">
+ <div class="mapa-placeholder">
+ <iframe
+ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3745.3!2d-40.8335!3d-21.0135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDAwJzQ4LjYiUyA0MMKwNTAnMDEuMiJX!5e0!3m2!1spt-BR!2sbr!4v1000000000000"
+ allowfullscreen="" loading="lazy" title="Localização Pousada Caminho da Praia">
+ </iframe>
+ </div>
+ <div class="contato-info">
+ <div class="contato-item">
+ <div class="contato-icon">📍</div>
+ <div>
+ <h4>Endereço</h4>
+ <p>Rua Bonfim, 160 – Praia de Itaóca<br>Itapemirim – ES<br><em style="font-size:0.85rem;color:#888;">Próximo à praça central e comércio local</em></p>
+ </div>
+ </div>
+ <div class="contato-item">
+ <div class="contato-icon">🕐</div>
+ <div>
+ <h4>Atendimento</h4>
+ <p>Segunda a Domingo<br>08h às 20h via WhatsApp</p>
+ </div>
+ </div>
+ <div class="contato-item">
+ <div class="contato-icon">📱</div>
+ <div>
+ <h4>WhatsApp</h4>
+ <p>Resposta rápida para reservas,<br>dúvidas e informações sobre pacotes.</p>
+ </div>
+ </div>
+ <a class="btn-wpp-main"
+ href="https://wa.me/5528999999999?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Pousada%20Caminho%20da%20Praia%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20vagas..."
+ target="_blank" rel="noopener">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.556 4.122 1.527 5.855L0 24l6.335-1.502A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.498-5.197-1.371l-.373-.219-3.861.915.977-3.756-.243-.389A9.942 9.942 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+ Falar pelo WhatsApp
+ </a>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- FOOTER -->
+ <footer>
+ <p>© 2025 <span>Pousada Caminho da Praia</span> · Praia de Itaóca, Itapemirim-ES · Todos os direitos reservados.</p>
+ </footer>
+
+ <!-- FLOATING WHATSAPP -->
+ <a class="wpp-float"
+ href="https://wa.me/5528999999999?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Pousada%20Caminho%20da%20Praia%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20vagas..."
+ target="_blank" rel="noopener" aria-label="WhatsApp">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.556 4.122 1.527 5.855L0 24l6.335-1.502A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.498-5.197-1.371l-.373-.219-3.861.915.977-3.756-.243-.389A9.942 9.942 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+ </a>
+
+ <script>
+ // Mobile menu toggle
+ const hamburger = document.getElementById('hamburger');
+ const navLinks = document.getElementById('navLinks');
+ hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+ navLinks.querySelectorAll('a').forEach(a => {
+ a.addEventListener('click', () => navLinks.classList.remove('open'));
+ });
+
+ // Navbar scroll effect
+ window.addEventListener('scroll', () => {
+ document.getElementById('navbar').style.boxShadow =
+ window.scrollY > 10 ? '0 4px 20px rgba(0,0,0,0.3)' : '0 2px 12px rgba(0,0,0,0.2)';
+ });
+ </script>
+</body>
+</html>
