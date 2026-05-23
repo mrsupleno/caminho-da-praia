@@ -9,435 +9,305 @@
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
  <style>
- /* ─── Design System Base (Google Stitch) ──────────────────── */
+ /* ─── Reset & Base ─────────────────────────────────────────── */
  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
  :root {
- /* Primary Colors */
- --primary: #022742;
- --primary-container: #1E3D59;
- --on-primary: #ffffff;
- --on-primary-container: #8aa8c9;
-
- /* Secondary Colors */
- --secondary: #775a00;
- --secondary-container: #fece57;
- --on-secondary: #ffffff;
- --on-secondary-container: #735700;
-
- /* Tertiary (WhatsApp Green) */
- --tertiary: #002c18;
- --tertiary-container: #004429;
- --on-tertiary: #ffffff;
- --tertiary-bright: #17B978;
-
- /* Surface Colors */
- --surface: #fcf9f8;
- --surface-container: #f0eded;
- --surface-container-high: #eae7e7;
- --on-surface: #1b1c1c;
- --on-surface-variant: #43474d;
- --outline: #73777e;
- --outline-variant: #c3c7ce;
-
- /* Gold Accent */
+ --navy: #1E3D59;
  --gold: #C59B27;
- --gold-light: #fece57;
-
- /* Spacing */
- --unit-xs: 4px;
- --unit-sm: 8px;
- --unit-md: 16px;
- --unit-lg: 24px;
- --unit-xl: 48px;
- --unit-xxl: 80px;
- --gutter: 24px;
- --container-max: 1200px;
-
- /* Shadows */
- --shadow-sm: 0 2px 8px rgba(30, 61, 89, 0.06);
- --shadow-md: 0 4px 20px rgba(30, 61, 89, 0.08);
- --shadow-lg: 0 8px 32px rgba(30, 61, 89, 0.12);
+ --wgreen: #17B978;
+ --bg: #F8F9FA;
+ --white: #FFFFFF;
+ --text: #2B2B2B;
+ --navy-light: #26507a;
  }
-
  html { scroll-behavior: smooth; }
  body {
- font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
- color: var(--on-surface);
- background: var(--surface);
+ font-family: 'Inter', Helvetica, sans-serif;
+ color: var(--text);
+ background: var(--white);
  line-height: 1.6;
- -webkit-font-smoothing: antialiased;
  }
  h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
  img { max-width: 100%; display: block; }
  a { text-decoration: none; color: inherit; }
 
- /* ─── Typography Scale ──────────────────────────────────────*/
- .headline-xl {
- font-family: 'Montserrat', sans-serif;
- font-size: clamp(32px, 5vw, 48px);
- font-weight: 700;
- line-height: 1.17;
- letter-spacing: -0.02em;
- }
- .headline-lg {
- font-family: 'Montserrat', sans-serif;
- font-size: clamp(24px, 3.5vw, 32px);
- font-weight: 600;
- line-height: 1.25;
- }
- .headline-md {
- font-family: 'Montserrat', sans-serif;
- font-size: 24px;
- font-weight: 600;
- line-height: 1.33;
- }
- .body-lg {
- font-family: 'Inter', sans-serif;
- font-size: 18px;
- font-weight: 400;
- line-height: 1.56;
- }
- .body-md {
- font-family: 'Inter', sans-serif;
- font-size: 16px;
- font-weight: 400;
- line-height: 1.5;
- }
- .label-md {
- font-family: 'Inter', sans-serif;
- font-size: 14px;
- font-weight: 500;
- line-height: 1.43;
- letter-spacing: 0.05em;
- }
- .label-sm {
- font-family: 'Inter', sans-serif;
- font-size: 12px;
- font-weight: 600;
- line-height: 1.33;
- letter-spacing: 0.05em;
- }
-
  /* ─── Navbar ───────────────────────────────────────────────── */
  #navbar {
  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
- background: var(--primary);
+ background: var(--navy);
  display: flex; align-items: center; justify-content: space-between;
- padding: 0 var(--gutter); height: 72px;
- border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+ padding: 0 2rem; height: 68px;
+ box-shadow: 0 2px 12px rgba(0,0,0,0.2);
  }
  .nav-logo {
- display: flex; align-items: center; gap: 12px;
+ display: flex; align-items: center; gap: 0.75rem;
  }
  .nav-logo-circle {
- width: 48px; height: 48px; border-radius: 50%;
- background: linear-gradient(135deg, var(--gold), var(--gold-light));
+ width: 44px; height: 44px; border-radius: 50%;
+ background: linear-gradient(135deg, var(--gold), #e8b830);
  display: flex; align-items: center; justify-content: center;
  font-family: 'Montserrat', sans-serif;
- font-weight: 800; color: var(--primary); font-size: 1.2rem;
+ font-weight: 800; color: var(--navy); font-size: 1.1rem;
  flex-shrink: 0;
- box-shadow: 0 2px 8px rgba(197, 155, 39, 0.3);
  }
  .nav-logo-text {
  font-family: 'Montserrat', sans-serif;
- font-weight: 700; font-size: 1rem;
- color: var(--on-primary); line-height: 1.2;
+ font-weight: 700; font-size: 0.95rem;
+ color: var(--white); line-height: 1.2;
  }
- .nav-logo-text span { color: var(--gold-light); }
+ .nav-logo-text span { color: var(--gold); }
  .nav-links {
- display: flex; align-items: center; gap: var(--unit-xl); list-style: none;
+ display: flex; align-items: center; gap: 2rem; list-style: none;
  }
  .nav-links a {
  color: rgba(255,255,255,0.85);
- font-size: 14px; font-weight: 500;
+ font-size: 0.875rem; font-weight: 500;
  transition: color 0.2s;
- position: relative;
  }
- .nav-links a::after {
- content: '';
- position: absolute;
- bottom: -4px;
- left: 0;
- width: 0;
- height: 2px;
- background: var(--gold);
- transition: width 0.2s;
- }
- .nav-links a:hover {
- color: var(--gold-light);
- }
- .nav-links a:hover::after {
- width: 100%;
- }
+ .nav-links a:hover { color: var(--gold); }
  .btn-reservar {
  background: var(--gold);
- color: var(--primary) !important;
+ color: var(--navy) !important;
  font-weight: 700 !important;
- padding: 10px 20px;
- border-radius: 4px;
- transition: all 0.2s;
- box-shadow: var(--shadow-sm);
+ padding: 0.5rem 1.25rem;
+ border-radius: 6px;
+ transition: background 0.2s, transform 0.1s !important;
  }
- .btn-reservar::after { display: none !important; }
- .btn-reservar:hover {
- background: var(--gold-light) !important;
- transform: translateY(-1px);
- box-shadow: var(--shadow-md);
- }
+ .btn-reservar:hover { background: #d4a82a !important; transform: translateY(-1px); }
  .nav-hamburger {
  display: none; flex-direction: column; gap: 5px; cursor: pointer;
  background: none; border: none; padding: 4px;
  }
  .nav-hamburger span {
  display: block; width: 24px; height: 2px;
- background: var(--on-primary); border-radius: 2px; transition: all 0.3s;
+ background: var(--white); border-radius: 2px; transition: all 0.3s;
  }
 
  /* ─── Hero ─────────────────────────────────────────────────── */
  #hero {
  min-height: 100vh;
  background:
- linear-gradient(to bottom, rgba(2, 39, 66, 0.75) 0%, rgba(2, 39, 66, 0.55) 50%, rgba(2, 39, 66, 0.85) 100%),
- url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=85') center/cover no-repeat;
+ linear-gradient(to bottom, rgba(30,61,89,0.72) 0%, rgba(30,61,89,0.55) 60%, rgba(30,61,89,0.85) 100%),
+ url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80') center/cover no-repeat;
  display: flex; align-items: center; justify-content: center;
- text-align: center; padding: calc(72px + var(--unit-xxl)) var(--gutter) var(--unit-xxl);
+ text-align: center; padding: 120px 1.5rem 4rem;
  }
- .hero-content { max-width: 800px; }
+ .hero-content { max-width: 780px; }
  .hero-badge {
  display: inline-block;
- background: rgba(254, 206, 87, 0.15);
- border: 1px solid var(--gold-light);
- color: var(--gold-light);
- font-size: 12px; font-weight: 600;
+ background: rgba(197,155,39,0.2);
+ border: 1px solid var(--gold);
+ color: var(--gold);
+ font-size: 0.8rem; font-weight: 600;
  letter-spacing: 0.1em; text-transform: uppercase;
- padding: 8px var(--unit-lg); border-radius: 9999px; margin-bottom: var(--unit-lg);
+ padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 1.5rem;
  }
  .hero-content h1 {
- font-size: clamp(2rem, 5vw, 3.5rem);
- font-weight: 800; color: var(--on-primary);
- line-height: 1.15; margin-bottom: var(--unit-lg);
- text-shadow: 0 4px 16px rgba(0,0,0,0.3);
- letter-spacing: -0.02em;
+ font-size: clamp(2rem, 5vw, 3.2rem);
+ font-weight: 800; color: var(--white);
+ line-height: 1.2; margin-bottom: 1.25rem;
+ text-shadow: 0 2px 12px rgba(0,0,0,0.3);
  }
  .hero-content p {
- font-size: clamp(1rem, 2vw, 1.25rem);
- color: rgba(255,255,255,0.9);
- margin-bottom: var(--unit-xl);
- max-width: 600px; margin-left: auto; margin-right: auto;
+ font-size: clamp(1rem, 2vw, 1.2rem);
+ color: rgba(255,255,255,0.88);
+ margin-bottom: 2.5rem; max-width: 580px; margin-left: auto; margin-right: auto;
  }
  .hero-cta {
- display: inline-flex; align-items: center; gap: 10px;
- background: var(--gold); color: var(--primary);
+ display: inline-flex; align-items: center; gap: 0.6rem;
+ background: var(--gold); color: var(--navy);
  font-family: 'Montserrat', sans-serif;
  font-weight: 700; font-size: 1rem;
- padding: 16px 32px; border-radius: 4px;
- transition: all 0.2s;
- box-shadow: 0 4px 24px rgba(254, 206, 87, 0.4);
+ padding: 0.9rem 2.2rem; border-radius: 8px;
+ transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+ box-shadow: 0 4px 20px rgba(197,155,39,0.45);
  }
  .hero-cta:hover {
- background: var(--gold-light);
- transform: translateY(-2px);
- box-shadow: 0 6px 32px rgba(254, 206, 87, 0.5);
+ background: #d4a82a; transform: translateY(-2px);
+ box-shadow: 0 6px 24px rgba(197,155,39,0.55);
  }
 
- /* ─── Section Base ─────────────────────────────────────────── */
- section { padding: var(--unit-xxl) var(--gutter); }
- .container { max-width: var(--container-max); margin: 0 auto; }
+ /* ─── Section base ─────────────────────────────────────────── */
+ section { padding: 5rem 1.5rem; }
+ .container { max-width: 1100px; margin: 0 auto; }
  .section-tag {
  display: inline-block;
- color: var(--secondary); font-size: 12px;
+ color: var(--gold); font-size: 0.78rem;
  font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
- margin-bottom: var(--unit-sm);
+ margin-bottom: 0.5rem;
  }
  .section-title {
- font-size: clamp(1.75rem, 4vw, 2.5rem);
- font-weight: 800; color: var(--primary);
- line-height: 1.2; margin-bottom: var(--unit-md);
+ font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+ font-weight: 800; color: var(--navy);
+ line-height: 1.25; margin-bottom: 1.25rem;
  }
  .section-divider {
- width: 64px; height: 4px; border-radius: 2px;
- background: linear-gradient(90deg, var(--gold), var(--gold-light));
- margin-bottom: var(--unit-xl);
+ width: 52px; height: 4px; border-radius: 2px;
+ background: var(--gold); margin-bottom: 2rem;
  }
 
  /* ─── A Pousada ────────────────────────────────────────────── */
- #pousada { background: var(--surface-container); }
+ #pousada { background: var(--bg); }
  .pousada-grid {
- display: grid; grid-template-columns: 1fr 1fr; gap: var(--unit-xxl); align-items: start;
+ display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
  }
  .pousada-text p {
- color: var(--on-surface-variant); font-size: 18px; line-height: 1.75; margin-bottom: var(--unit-md);
+ color: #444; font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem;
  }
- .pousada-cards { display: flex; flex-direction: column; gap: var(--unit-lg); }
+ .pousada-cards { display: flex; flex-direction: column; gap: 1.25rem; }
  .pousada-card {
- background: #ffffff;
+ background: var(--white);
  border-left: 4px solid var(--gold);
- border-radius: 0 8px 8px 0;
- padding: var(--unit-lg);
- box-shadow: var(--shadow-md);
- transition: transform 0.2s, box-shadow 0.2s;
+ border-radius: 0 10px 10px 0;
+ padding: 1.5rem 1.5rem;
+ box-shadow: 0 2px 12px rgba(0,0,0,0.07);
  }
- .pousada-card:hover {
- transform: translateX(4px);
- box-shadow: var(--shadow-lg);
- }
- .pousada-card-icon { font-size: 2rem; margin-bottom: var(--unit-sm); }
+ .pousada-card-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
  .pousada-card h4 {
- font-size: 1.125rem; font-weight: 700;
- color: var(--primary); margin-bottom: var(--unit-xs);
+ font-size: 1rem; font-weight: 700;
+ color: var(--navy); margin-bottom: 0.4rem;
  }
- .pousada-card p { font-size: 0.95rem; color: var(--on-surface-variant); line-height: 1.65; }
+ .pousada-card p { font-size: 0.925rem; color: #555; line-height: 1.6; }
 
  /* ─── Excursões ────────────────────────────────────────────── */
- #excursoes { background: #ffffff; }
- .excursoes-header { text-align: center; margin-bottom: var(--unit-xl); }
+ #excursoes { background: var(--white); }
+ .excursoes-header { text-align: center; margin-bottom: 3rem; }
  .excursoes-header .section-divider { margin-left: auto; margin-right: auto; }
  .excursoes-grid {
- display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--unit-xl);
+ display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem;
  }
  .exc-card {
- border: 1px solid var(--outline-variant);
- border-radius: 8px; overflow: hidden;
- box-shadow: var(--shadow-md);
+ border: 1px solid #e4e8ee;
+ border-radius: 14px; overflow: hidden;
+ box-shadow: 0 3px 18px rgba(0,0,0,0.07);
  transition: transform 0.2s, box-shadow 0.2s;
- background: #ffffff;
  }
- .exc-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+ .exc-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
  .exc-card-header {
- background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
- padding: var(--unit-lg) var(--unit-xl);
+ background: var(--navy); padding: 1.5rem 1.75rem;
  }
  .exc-card-header h3 {
- color: var(--on-primary); font-size: 1.375rem; font-weight: 700; margin-bottom: 6px;
+ color: var(--white); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.35rem;
  }
- .exc-card-header p { color: rgba(255,255,255,0.75); font-size: 0.9rem; }
- .exc-card-body { padding: var(--unit-lg) var(--unit-xl); }
- .badges { display: flex; flex-wrap: wrap; gap: var(--unit-sm); margin-bottom: var(--unit-lg); }
+ .exc-card-header p { color: rgba(255,255,255,0.72); font-size: 0.875rem; }
+ .exc-card-body { padding: 1.5rem 1.75rem; }
+ .badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
  .badge {
- font-size: 11px; font-weight: 600; text-transform: uppercase;
- padding: 6px 12px; border-radius: 4px;
- display: flex; align-items: center; gap: 6px;
- letter-spacing: 0.05em;
+ font-size: 0.75rem; font-weight: 600;
+ padding: 0.28rem 0.75rem; border-radius: 50px;
+ display: flex; align-items: center; gap: 0.3rem;
  }
- .badge-navy { background: rgba(2, 39, 66, 0.08); color: var(--primary); }
- .badge-gold { background: rgba(197, 155, 39, 0.12); color: var(--secondary); }
- .exc-card-body p { font-size: 0.95rem; color: var(--on-surface-variant); margin-bottom: var(--unit-xl); line-height: 1.7; }
+ .badge-navy { background: rgba(30,61,89,0.1); color: var(--navy); }
+ .badge-gold { background: rgba(197,155,39,0.15); color: #8a6c18; }
+ .exc-card-body p { font-size: 0.9rem; color: #555; margin-bottom: 1.5rem; line-height: 1.65; }
  .btn-consultar {
- display: inline-flex; align-items: center; gap: 8px;
- background: var(--tertiary-bright); color: var(--on-tertiary);
+ display: inline-flex; align-items: center; gap: 0.5rem;
+ background: var(--wgreen); color: var(--white);
  font-family: 'Montserrat', sans-serif;
- font-weight: 700; font-size: 0.95rem;
- padding: 14px var(--unit-xl); border-radius: 4px;
- transition: all 0.2s;
+ font-weight: 700; font-size: 0.9rem;
+ padding: 0.7rem 1.5rem; border-radius: 7px;
+ transition: background 0.2s, transform 0.15s;
  width: 100%; justify-content: center;
- box-shadow: var(--shadow-sm);
  }
- .btn-consultar:hover {
- background: #13a368;
- transform: translateY(-2px);
- box-shadow: var(--shadow-md);
- }
- .btn-consultar svg { width: 20px; height: 20px; fill: var(--on-tertiary); flex-shrink: 0; }
+ .btn-consultar:hover { background: #13a368; transform: translateY(-1px); }
+ .btn-consultar svg { width: 18px; height: 18px; fill: var(--white); flex-shrink: 0; }
 
  /* ─── Localização & Contato ────────────────────────────────── */
- #contato { background: var(--surface-container); }
+ #contato { background: var(--bg); }
  .contato-grid {
- display: grid; grid-template-columns: 1fr 1fr; gap: var(--unit-xxl); align-items: start;
+ display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start;
  }
  .mapa-placeholder {
  background: linear-gradient(135deg, #d0dce8, #b8ccd8);
- border-radius: 8px; overflow: hidden;
+ border-radius: 14px; overflow: hidden;
  aspect-ratio: 16/10; position: relative;
- box-shadow: var(--shadow-lg);
+ box-shadow: 0 4px 20px rgba(0,0,0,0.1);
  }
  .mapa-placeholder iframe {
  width: 100%; height: 100%; border: none;
  }
- .contato-info { display: flex; flex-direction: column; gap: var(--unit-lg); }
- .contato-item { display: flex; gap: var(--unit-md); align-items: flex-start; }
+ .mapa-fallback {
+ position: absolute; inset: 0;
+ display: flex; flex-direction: column;
+ align-items: center; justify-content: center;
+ gap: 0.5rem; color: var(--navy);
+ }
+ .mapa-fallback svg { width: 48px; height: 48px; opacity: 0.5; }
+ .mapa-fallback p { font-size: 0.875rem; opacity: 0.6; }
+ .contato-info { display: flex; flex-direction: column; gap: 1.5rem; }
+ .contato-item { display: flex; gap: 1rem; align-items: flex-start; }
  .contato-icon {
- width: 52px; height: 52px; border-radius: 8px;
- background: var(--primary); color: var(--on-primary);
+ width: 44px; height: 44px; border-radius: 10px;
+ background: var(--navy); color: var(--white);
  display: flex; align-items: center; justify-content: center;
- font-size: 1.5rem; flex-shrink: 0;
- box-shadow: var(--shadow-sm);
+ font-size: 1.2rem; flex-shrink: 0;
  }
  .contato-item h4 {
- font-size: 0.875rem; font-weight: 700;
- color: var(--secondary); text-transform: uppercase;
- letter-spacing: 0.08em; margin-bottom: 4px;
+ font-size: 0.85rem; font-weight: 700;
+ color: var(--gold); text-transform: uppercase;
+ letter-spacing: 0.06em; margin-bottom: 0.2rem;
  }
- .contato-item p { font-size: 1rem; color: var(--on-surface-variant); line-height: 1.6; }
+ .contato-item p { font-size: 0.95rem; color: #444; line-height: 1.5; }
  .btn-wpp-main {
- display: inline-flex; align-items: center; gap: 10px;
- background: var(--tertiary-bright); color: var(--on-tertiary);
+ display: inline-flex; align-items: center; gap: 0.65rem;
+ background: var(--wgreen); color: var(--white);
  font-family: 'Montserrat', sans-serif;
- font-weight: 700; font-size: 1.05rem;
- padding: 16px var(--unit-xl); border-radius: 4px; margin-top: var(--unit-md);
- transition: all 0.2s;
- box-shadow: 0 4px 20px rgba(23, 185, 120, 0.35);
+ font-weight: 700; font-size: 1rem;
+ padding: 0.9rem 2rem; border-radius: 8px; margin-top: 1rem;
+ transition: background 0.2s, transform 0.15s;
+ box-shadow: 0 4px 18px rgba(23,185,120,0.35);
  }
- .btn-wpp-main:hover {
- background: #13a368;
- transform: translateY(-2px);
- box-shadow: 0 6px 28px rgba(23, 185, 120, 0.45);
- }
- .btn-wpp-main svg { width: 24px; height: 24px; fill: var(--on-tertiary); }
+ .btn-wpp-main:hover { background: #13a368; transform: translateY(-2px); }
+ .btn-wpp-main svg { width: 22px; height: 22px; fill: var(--white); }
 
  /* ─── Footer ───────────────────────────────────────────────── */
  footer {
- background: var(--primary); color: rgba(255,255,255,0.75);
- text-align: center; padding: var(--unit-xl) var(--gutter);
+ background: var(--navy); color: rgba(255,255,255,0.7);
+ text-align: center; padding: 1.75rem 1.5rem;
  font-size: 0.875rem;
- border-top: 1px solid rgba(255, 255, 255, 0.1);
  }
- footer span { color: var(--gold-light); font-weight: 600; }
+ footer span { color: var(--gold); }
 
  /* ─── Floating WhatsApp ────────────────────────────────────── */
  .wpp-float {
- position: fixed; bottom: var(--unit-lg); right: var(--unit-lg); z-index: 998;
- background: var(--tertiary-bright);
- width: 64px; height: 64px; border-radius: 50%;
+ position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 998;
+ background: var(--wgreen);
+ width: 58px; height: 58px; border-radius: 50%;
  display: flex; align-items: center; justify-content: center;
- box-shadow: 0 4px 24px rgba(23, 185, 120, 0.5);
- transition: all 0.2s;
+ box-shadow: 0 4px 20px rgba(23,185,120,0.5);
+ transition: transform 0.2s, box-shadow 0.2s;
  }
- .wpp-float:hover {
- transform: scale(1.1);
- box-shadow: 0 6px 32px rgba(23, 185, 120, 0.65);
- }
- .wpp-float svg { width: 34px; height: 34px; fill: var(--on-tertiary); }
+ .wpp-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(23,185,120,0.65); }
+ .wpp-float svg { width: 30px; height: 30px; fill: var(--white); }
 
  /* ─── Responsive ───────────────────────────────────────────── */
  @media (max-width: 900px) {
- .pousada-grid, .contato-grid { grid-template-columns: 1fr; gap: var(--unit-xl); }
+ .pousada-grid, .contato-grid { grid-template-columns: 1fr; gap: 2.5rem; }
  }
  @media (max-width: 768px) {
- :root {
- --gutter: 20px;
- --unit-xxl: 64px;
- }
- section { padding: 64px var(--gutter); }
  .nav-links { display: none; flex-direction: column; gap: 0; }
  .nav-links.open {
  display: flex; position: absolute;
- top: 72px; left: 0; right: 0;
- background: var(--primary);
- padding: var(--unit-md) var(--gutter) var(--unit-lg);
- box-shadow: var(--shadow-lg);
- border-top: 1px solid rgba(255, 255, 255, 0.1);
+ top: 68px; left: 0; right: 0;
+ background: var(--navy);
+ padding: 1rem 2rem 1.5rem;
+ box-shadow: 0 8px 24px rgba(0,0,0,0.2);
  }
  .nav-links li { width: 100%; }
  .nav-links a {
- display: block; padding: 12px 0;
+ display: block; padding: 0.75rem 0;
  border-bottom: 1px solid rgba(255,255,255,0.08);
  }
  .nav-links .btn-reservar {
- margin-top: 12px; text-align: center;
- border-radius: 4px; border-bottom: none !important;
+ margin-top: 0.75rem; text-align: center;
+ border-radius: 6px; border-bottom: none !important;
  }
  .nav-hamburger { display: flex; }
+ section { padding: 3.5rem 1.25rem; }
  .excursoes-grid { grid-template-columns: 1fr; }
+ }
+ @media (max-width: 480px) {
+ .hero-content h1 { font-size: 1.75rem; }
  }
  </style>
 </head>
@@ -475,7 +345,7 @@
  <p>Sua melhor escolha para relaxar em família e aproveitar o litoral sul do Espírito Santo com o melhor custo-benefício.</p>
  <a class="hero-cta" href="#excursoes">
  Ver Próximas Excursões
- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+ <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
  </a>
  </div>
  </section>
@@ -520,7 +390,7 @@
  <span class="section-tag">Calendário</span>
  <h2 class="section-title">Excursões & Pacotes</h2>
  <div class="section-divider"></div>
- <p style="max-width:560px;margin:0 auto;color:var(--on-surface-variant);font-size:1.05rem;">Escolha o pacote ideal para você e sua família. Consulte as vagas disponíveis diretamente pelo WhatsApp.</p>
+ <p style="max-width:540px;margin:0 auto;color:#555;">Escolha o pacote ideal para você e sua família. Consulte as vagas disponíveis diretamente pelo WhatsApp.</p>
  </div>
  <div class="excursoes-grid">
 
@@ -532,9 +402,9 @@
  </div>
  <div class="exc-card-body">
  <div class="badges">
- <span class="badge badge-navy">🚌 Transporte</span>
+ <span class="badge badge-navy">🚌 Transporte Incluso</span>
  <span class="badge badge-navy">🏨 Hospedagem</span>
- <span class="badge badge-gold">☕ Café</span>
+ <span class="badge badge-gold">☕ Café da Manhã</span>
  </div>
  <p>O pacote perfeito para uma fuga de fim de semana. Aproveite a praia, o descanso e o café artesanal da pousada sem preocupações.</p>
  <a class="btn-consultar"
@@ -554,10 +424,10 @@
  </div>
  <div class="exc-card-body">
  <div class="badges">
- <span class="badge badge-navy">🚌 Transporte</span>
- <span class="badge badge-navy">🏨 Hospedagem</span>
- <span class="badge badge-gold">☕ Café</span>
- <span class="badge badge-gold">🍽️ Jantar</span>
+ <span class="badge badge-navy">🚌 Transporte de Turismo</span>
+ <span class="badge badge-navy">🏨 Hospedagem Completa</span>
+ <span class="badge badge-gold">☕ Café da Manhã</span>
+ <span class="badge badge-gold">🍽️ Jantar Incluso</span>
  </div>
  <p>Aproveite o clima ameno do meio do ano para relaxar na costa capixaba com condições especiais. O pacote mais completo da pousada.</p>
  <a class="btn-consultar"
@@ -578,8 +448,8 @@
  <div class="exc-card-body">
  <div class="badges">
  <span class="badge badge-navy">🏨 Suíte Especial</span>
- <span class="badge badge-gold">☕ Café na Varanda</span>
- <span class="badge badge-gold">🌅 Vista Mar</span>
+ <span class="badge badge-gold">☕ Café da Manhã na Varanda</span>
+ <span class="badge badge-gold">🌅 Vista para o Mar</span>
  </div>
  <p>Experiência romântica à beira-mar com quarto especial, café da manhã exclusivo na varanda e toda a tranquilidade que o casal merece.</p>
  <a class="btn-consultar"
@@ -598,7 +468,7 @@
  <!-- LOCALIZAÇÃO & CONTATO -->
  <section id="contato">
  <div class="container">
- <div style="margin-bottom:var(--unit-xl);">
+ <div style="margin-bottom:3rem;">
  <span class="section-tag">Onde Estamos</span>
  <h2 class="section-title">Localização & Contato</h2>
  <div class="section-divider"></div>
@@ -615,7 +485,7 @@
  <div class="contato-icon">📍</div>
  <div>
  <h4>Endereço</h4>
- <p>Rua Bonfim, 160 – Praia de Itaóca<br>Itapemirim – ES<br><em style="font-size:0.9rem;color:var(--outline);">Próximo à praça central e comércio local</em></p>
+ <p>Rua Bonfim, 160 – Praia de Itaóca<br>Itapemirim – ES<br><em style="font-size:0.85rem;color:#888;">Próximo à praça central e comércio local</em></p>
  </div>
  </div>
  <div class="contato-item">
@@ -666,13 +536,8 @@
 
  // Navbar scroll effect
  window.addEventListener('scroll', () => {
- const nav = document.getElementById('navbar');
- if (window.scrollY > 20) {
- nav.style.boxShadow = '0 4px 24px rgba(2, 39, 66, 0.15)';
- } else {
- nav.style.boxShadow = 'none';
- nav.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
- }
+ document.getElementById('navbar').style.boxShadow =
+ window.scrollY > 10 ? '0 4px 20px rgba(0,0,0,0.3)' : '0 2px 12px rgba(0,0,0,0.2)';
  });
  </script>
 </body>
